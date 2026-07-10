@@ -51,17 +51,13 @@ The goal was to containerize the app end-to-end, ensuring reproducibility, porta
  
 ## ⚙️ Environment Variables
  
-Create a `.env` file in the project root (use `.env.example` as a template):
- 
-POSTGRES_DB=employee_db
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=password
-DB_HOST=db
-DB_NAME=employee_db
-DB_USER=postgres
-DB_PASSWORD=password
+Create a `.env` file in the project root:
 
-> ⚠️ Never commit your real `.env` file. Only `.env.example` (with dummy values) should be tracked in git.
+ ```
+POSTGRES_DB=employee_db1
+POSTGRES_USER=postgres1
+POSTGRES_PASSWORD=password1
+```
  
 ---
  
@@ -109,7 +105,7 @@ docker compose down -v
 To verify the image works standalone, pulled fresh from Docker Hub:
  
 ```bash
-docker pull <your-dockerhub-username>/<your-image-name>:latest
+docker pull jeenicj97/flask-app:v1
 docker compose up
 ```
  
@@ -130,7 +126,7 @@ docker compose up
 |------------------|---------------------|
 | Base image        | `python:3.12-slim`   |
 | Final image size  | `132 MB`            |
-| User              | Non-root (`appuser`) |
+| User              | `appuser` |
  
 ---
 
