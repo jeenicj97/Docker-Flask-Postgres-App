@@ -36,14 +36,14 @@ The goal was to containerize the app end-to-end, ensuring reproducibility, porta
  
 ```
 .
+.
 ├── app/
 │   ├── app.py
 │   ├── requirements.txt
-│   └── ...
-├── Dockerfile
+│   ├── Dockerfile
 ├── docker-compose.yml
 ├── .dockerignore
-├── .env.example
+├── .env
 └── README.md
 ```
  
