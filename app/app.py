@@ -12,7 +12,7 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 @app.route("/")
 def home():
-    return "Hello from Flask + PostgreSQL Docker Project!"
+    return "Hello from Flask + PostgreSQL Docker Project! JEENI HERE"
 
 
 @app.route("/health")
