@@ -14,7 +14,7 @@ HOME_PAGE = """
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Flask + PostgreSQL * Docker * Project</title>
+<title>Flask + PostgreSQL Docker Project</title>
 <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -31,7 +31,7 @@ HOME_PAGE = """
         border-radius: 16px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         text-align: center;
-        max-width: 480px;
+        max-width: 500px;
     }
     .badge {
         display: inline-block;
@@ -51,7 +51,7 @@ HOME_PAGE = """
     }
     p.subtitle {
         color: #555;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         font-size: 15px;
     }
     .tag {
@@ -80,3 +80,87 @@ HOME_PAGE = """
         0% { opacity: 1; }
         50% { opacity: 0.4; }
         100% { opacity: 1; }
+    }
+    a.health-link {
+        display: block;
+        margin-top: 25px;
+        color: #2a5298;
+        text-decoration: none;
+        font-size: 13px;
+    }
+    a.health-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">Docker · Jenkins · Flask</div>
+        <h1>Flask + PostgreSQL Project</h1>
+        <p class="subtitle">Hello from <span class="tag">JEENI</span> - integrated with Jenkins 🚀</p>
+        <div class="status"><span class="dot"></span> App is live</div>
+        <a class="health-link" href="/health">Check health endpoint →</a>
+    </div>
+</body>
+</html>
+"""
+
+HEALTH_PAGE = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Check</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #134e5e, #71b280);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    .card {
+        background: #ffffff;
+        padding: 40px 60px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        text-align: center;
+    }
+    h1 { color: #134e5e; font-size: 22px; margin-bottom: 10px; }
+    .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #eafaf1;
+        color: #1e7e34;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
+        background: #28a745;
+        border-radius: 50%;
+    }
+</style>
+</head>
+<body>
+    <div class="card">
+        <h1>Health Check</h1>
+        <div class="status"><span class="dot"></span> Application is running</div>
+    </div>
+</body>
+</html>
+"""
+
+@app.route("/")
+def home():
+    return render_template_string(HOME_PAGE)
+
+@app.route("/health")
+def health():
+    return render_template_string(HEALTH_PAGE)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
