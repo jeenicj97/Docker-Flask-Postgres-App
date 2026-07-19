@@ -93,7 +93,7 @@ HOME_PAGE = """
 </head>
 <body>
     <div class="card">
-        <div class="badge">Docker · Jenkins · Flask</div>
+        <div class="badge">Docker·Jenkins · Flask</div>
         <h1>Flask + PostgreSQL Project</h1>
         <p class="subtitle">Hello from <span class="tag">JEENI</span> — trying out Jenkins 🚀</p>
         <div class="status"><span class="dot"></span> App is live</div>
