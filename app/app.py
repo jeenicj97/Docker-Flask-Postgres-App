@@ -14,7 +14,7 @@ HOME_PAGE = """
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Flask + PostgreSQL Docker Project</title>
+<title>Flask + PostgreSQL * Docker * Project</title>
 <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
